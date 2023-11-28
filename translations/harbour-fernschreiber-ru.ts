@@ -348,11 +348,11 @@
     </message>
     <message>
         <source>Leave Chat</source>
-        <translation>Выйти из Чата</translation>
+        <translation>Выйти из чата</translation>
     </message>
     <message>
         <source>Join Chat</source>
-        <translation>Зайти в Чат</translation>
+        <translation>Зайти в чат</translation>
     </message>
     <message>
         <source>Leaving chat</source>
@@ -427,7 +427,7 @@
     </message>
     <message>
         <source>Search in Chat</source>
-        <translation>Найти в Чате</translation>
+        <translation>Поиск в чате</translation>
     </message>
     <message>
         <source>Search in chat...</source>
@@ -492,6 +492,10 @@
     <message>
         <source>Deleted User</source>
         <translation>Удалённый пользователь</translation>
+    </message>
+    <message>
+        <source>Double-tap on a message to choose a reaction</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1152,7 +1156,7 @@
     </message>
     <message>
         <source>Secret Chat</source>
-        <translation>Секретный Чат</translation>
+        <translation>Секретный чат</translation>
     </message>
     <message>
         <source>End-to-end-encrypted, accessible on this device only</source>
@@ -1234,7 +1238,7 @@
     </message>
     <message>
         <source>New Chat</source>
-        <translation>Новый Чат</translation>
+        <translation>Новый чат</translation>
     </message>
     <message>
         <source>Filter your chats...</source>
@@ -1242,7 +1246,7 @@
     </message>
     <message>
         <source>Search Chats</source>
-        <translation>Найти Чаты</translation>
+        <translation>Поиск чатов</translation>
     </message>
     <message>
         <source>Download of %1 successful.</source>
@@ -1453,7 +1457,7 @@
     <name>SearchChatsPage</name>
     <message>
         <source>No chats found.</source>
-        <translation>Чаты не найдены</translation>
+        <translation>Ничего не найдено</translation>
     </message>
     <message>
         <source>Searching chats...</source>
@@ -1461,7 +1465,7 @@
     </message>
     <message>
         <source>Private Chat</source>
-        <translation>Приватный Чат</translation>
+        <translation>Приватный чат</translation>
     </message>
     <message>
         <source>Group</source>
@@ -1489,7 +1493,7 @@
     </message>
     <message>
         <source>Search Chats</source>
-        <translation>Найти Чаты</translation>
+        <translation>Поиск чатов</translation>
     </message>
     <message>
         <source>Search a chat...</source>
@@ -1607,23 +1611,23 @@
     </message>
     <message>
         <source>Always append message preview to notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Всегда показывать последнее сообщение на экране событий</translation>
     </message>
     <message>
         <source>In addition to showing the number of unread messages, the latest message will also be appended to notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Включать в текст на экране событий не только количество непрочитанных сообщений, но и содержимое последнего сообщения.</translation>
     </message>
     <message>
         <source>Highlight unread messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Выделять непрочитанные сообщения</translation>
     </message>
     <message>
         <source>Highlight Conversations with unread messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Помечать чаты и каналы с непрочитанными сообщениями другим шрифтом и цветом.</translation>
     </message>
     <message>
         <source>Hide content in notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Не показывать содержимое сообщений в уведомлениях</translation>
     </message>
 </context>
 <context>
@@ -1736,39 +1740,39 @@
     </message>
     <message numerus="yes">
         <source>%1 day(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%1 день</numerusform>
+            <numerusform>%1 дня</numerusform>
+            <numerusform>%1 дней</numerusform>
         </translation>
     </message>
     <message>
         <source>1 week</source>
-        <translation type="unfinished"></translation>
+        <translation>1 неделя</translation>
     </message>
     <message>
         <source>1 month</source>
-        <translation type="unfinished"></translation>
+        <translation>1 месяц</translation>
     </message>
     <message>
         <source>3 months</source>
-        <translation type="unfinished"></translation>
+        <translation>3 месяца</translation>
     </message>
     <message>
         <source>6 months</source>
-        <translation type="unfinished"></translation>
+        <translation>6 месяцев</translation>
     </message>
     <message>
         <source>1 year</source>
-        <translation type="unfinished"></translation>
+        <translation>1 год</translation>
     </message>
     <message>
         <source>Session Timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Таймаут неактивности</translation>
     </message>
     <message>
         <source>Inactive sessions will be terminated after this timeframe</source>
-        <translation type="unfinished"></translation>
+        <translation>Неактивные сеансы будут автоматически завершены через указанное время.</translation>
     </message>
 </context>
 <context>
