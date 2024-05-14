@@ -487,7 +487,8 @@ int ChatModel::getDisplayedMessageIndex(qlonglong messageId)
                 realIndex -= (message->albumMessageIds.count() - 1);
             }
         }
-
+        if(realIndex < -1)
+            return -1;
         return realIndex;
     }
     return -1;
