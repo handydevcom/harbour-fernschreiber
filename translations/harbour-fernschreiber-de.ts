@@ -908,7 +908,7 @@
     <message numerus="yes">
         <source>Forward %Ln messages</source>
         <comment>dialog header</comment>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%Ln Nachricht weiterleiten</numerusform>
             <numerusform>%Ln Nachrichten weiterleiten</numerusform>
         </translation>
