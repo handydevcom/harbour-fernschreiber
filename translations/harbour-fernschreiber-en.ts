@@ -910,7 +910,7 @@ messages</numerusform>
     <message numerus="yes">
         <source>Forward %Ln messages</source>
         <comment>dialog header</comment>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Forward %Ln message</numerusform>
             <numerusform>Forward %Ln messages</numerusform>
         </translation>

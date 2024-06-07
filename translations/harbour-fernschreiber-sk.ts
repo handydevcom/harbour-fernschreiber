@@ -922,7 +922,7 @@
     <message numerus="yes">
         <source>Forward %Ln messages</source>
         <comment>dialog header</comment>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Postúpená %Ln správa</numerusform>
             <numerusform>Postúpené %Ln správy</numerusform>
             <numerusform>Postúpených %Ln správ</numerusform>

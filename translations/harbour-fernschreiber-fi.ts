@@ -909,7 +909,7 @@
     <message numerus="yes">
         <source>Forward %Ln messages</source>
         <comment>dialog header</comment>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Välitä %Ln viesti</numerusform>
             <numerusform>Välitä %Ln viestiä</numerusform>
         </translation>

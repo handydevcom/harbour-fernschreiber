@@ -925,7 +925,7 @@
     <message numerus="yes">
         <source>Forward %Ln messages</source>
         <comment>dialog header</comment>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Перенаправить %Ln сообщение</numerusform>
             <numerusform>Перенаправить %Ln сообщения</numerusform>
             <numerusform>Перенаправить %Ln сообщений</numerusform>

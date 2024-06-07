@@ -922,7 +922,7 @@
     <message numerus="yes">
         <source>Forward %Ln messages</source>
         <comment>dialog header</comment>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Przekaż %Ln wiadomość</numerusform>
             <numerusform>Przekaż %Ln wiadomości</numerusform>
             <numerusform>Przekaż %Ln wiadomości</numerusform>
