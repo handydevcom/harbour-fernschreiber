@@ -9,7 +9,7 @@
     </message>
     <message>
         <source>A Telegram client for Sailfish OS</source>
-        <translation>Telegram-клиент для Sailfish OS</translation>
+        <translation>Telegram-клиент для ОС Аврора</translation>
     </message>
     <message>
         <source>Send E-Mail</source>
@@ -970,7 +970,7 @@
     </message>
     <message>
         <source>Welcome to Fernschreiber!</source>
-        <translation>Fernschreiber</translation>
+        <translation>Телеграф</translation>
     </message>
     <message>
         <source>Please enter your phone number to continue.</source>
@@ -1225,7 +1225,7 @@
     </message>
     <message>
         <source>Fernschreiber</source>
-        <translation>Fernschreiber</translation>
+        <translation>Телеграф</translation>
     </message>
     <message>
         <source>Waiting for network...</source>
@@ -1586,7 +1586,7 @@
     </message>
     <message>
         <source>Fernschreiber will wait a bit before messages are marked as read</source>
-        <translation>Fernschreiber может отмечать сообщения как прочитанные с некоторой задержкой, а не сразу как только они показываются на экране.</translation>
+        <translation>Телеграф может отмечать сообщения как прочитанные с некоторой задержкой, а не сразу как только они показываются на экране.</translation>
     </message>
     <message>
         <source>Open-with menu integration</source>
@@ -1594,7 +1594,7 @@
     </message>
     <message>
         <source>Integrate Fernschreiber into open-with menu of Sailfish OS</source>
-        <translation>Встроить Fernschreiber в системное меню &quot;открыть с помощью&quot;</translation>
+        <translation>Встроить Телеграф в системное меню &quot;открыть с помощью&quot;</translation>
     </message>
     <message>
         <source>Notification feedback</source>
@@ -1626,7 +1626,7 @@
     </message>
     <message>
         <source>When sounds are enabled, Fernschreiber will use the current Sailfish OS notification sound for chats, which can be configured in the system settings.</source>
-        <translation>Если звуки разрешены, Fernschreiber использует звук, выбранный для чатов в настройках Sailfish OS.</translation>
+        <translation>Если звуки разрешены, Телеграф использует звук, выбранный для чатов в системных настройках.</translation>
     </message>
     <message>
         <source>Always append message preview to notifications</source>
@@ -1814,7 +1814,7 @@
     </message>
     <message>
         <source>Disables offline caching. Certain features may be limited or missing in this mode. Changes require a restart of Fernschreiber to take effect.</source>
-        <translation>В этом режиме не будет использоваться кэширование и некоторые функции могут быть ограничены или отсутствовать. Изменения вступят в силу после перезапуска Fernschreiber.</translation>
+        <translation>В этом режиме не будет использоваться кэширование и некоторые функции могут быть ограничены или отсутствовать. Изменения вступят в силу после перезапуска программы.</translation>
     </message>
     <message>
         <source>Enable storage optimizer</source>
