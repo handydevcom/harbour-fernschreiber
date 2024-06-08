@@ -2264,6 +2264,8 @@ void TDLibWrapper::initializeOpenWith()
 {
     LOG("Initialize open-with");LOG("Checking standard open URL file...");
 
+    QString productType = QSysInfo::productType();
+
     const QStringList sailfishOSVersion = QSysInfo::productVersion().split(".");
     int sailfishOSMajorVersion = sailfishOSVersion.value(0).toInt();
     int sailfishOSMinorVersion = sailfishOSVersion.value(1).toInt();
@@ -2331,7 +2333,7 @@ void TDLibWrapper::initializeOpenWith()
         fileOut << QString("Name=Fernschreiber").toUtf8() << "\n";
         fileOut << QString("Icon=harbour-fernschreiber").toUtf8() << "\n";
         fileOut << QString("NotShowIn=X-MeeGo;").toUtf8() << "\n";
-        if (sailfishOSMajorVersion < 4 || ( sailfishOSMajorVersion == 4 && sailfishOSMinorVersion < 1 )) {
+        if ((sailfishOSMajorVersion < 4 || ( sailfishOSMajorVersion == 4 && sailfishOSMinorVersion < 1 )) && productType != "auroraos") {
             fileOut << QString("MimeType=text/html;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/tg;").toUtf8() << "\n";
         } else {
             fileOut << QString("MimeType=x-url-handler/t.me;x-scheme-handler/tg;").toUtf8() << "\n";
