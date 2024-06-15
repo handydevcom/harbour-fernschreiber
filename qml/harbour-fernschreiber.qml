@@ -30,6 +30,16 @@ ApplicationWindow
     cover: Qt.resolvedUrl("pages/CoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
 
+    /*onApplicationActiveChanged: {
+        if(applicationActive) {
+            tdLibWrapper.startUpdates()
+        } else {
+            tdLibWrapper.stopUpdates()
+        }
+
+        console.log("application applicationActive! ", applicationActive)
+    }*/
+
     Connections {
         target: dBusAdaptor
         onPleaseOpenMessage: {

@@ -373,6 +373,8 @@ public slots:
     void handleNetworkConfigurationChanged(const QNetworkConfiguration &config);
     void handleActiveEmojiReactionsUpdated(const QStringList& emojis);
     void handleGetPageSourceFinished();
+    void stopUpdates();
+    void startUpdates();
 
 private:
     void setOption(const QString &name, const QString &type, const QVariant &value);
