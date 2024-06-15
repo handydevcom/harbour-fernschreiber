@@ -2211,6 +2211,19 @@ void TDLibWrapper::handleGetPageSourceFinished()
     }
 }
 
+void TDLibWrapper::stopUpdates() {
+    qDebug() << "stopUpdates";
+    this->tdLibReceiver->setActive(false);
+}
+
+void TDLibWrapper::startUpdates() {
+    if(!this->tdLibReceiver->isRunning()) {
+        qDebug() << "startUpdates really called";
+        this->tdLibReceiver->setActive(true);
+        this->tdLibReceiver->start();
+    }
+}
+
 QVariantMap& TDLibWrapper::fillTdlibParameters(QVariantMap& parameters)
 {
     parameters.insert("api_id", TDLIB_API_ID);

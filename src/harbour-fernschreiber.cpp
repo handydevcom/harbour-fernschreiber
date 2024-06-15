@@ -60,7 +60,7 @@
 // The default filter can be overridden by QT_LOGGING_RULES envinronment variable, e.g.
 // QT_LOGGING_RULES="fernschreiber.*=true" harbour-fernschreiber
 #if defined (QT_DEBUG) || defined(DEBUG)
-#  define DEFAULT_LOG_FILTER "fernschreiber.*=true"
+#  define DEFAULT_LOG_FILTER "fernschreiber.*=false"
 #else
 #  define DEFAULT_LOG_FILTER "fernschreiber.*=false"
 #endif
