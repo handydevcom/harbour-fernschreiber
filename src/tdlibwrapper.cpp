@@ -2211,17 +2211,12 @@ void TDLibWrapper::handleGetPageSourceFinished()
     }
 }
 
-void TDLibWrapper::stopUpdates() {
-    qDebug() << "stopUpdates";
-    this->tdLibReceiver->setActive(false);
+void TDLibWrapper::handleBackground() {
+    this->tdLibReceiver->setPowerSavingMode(true);
 }
 
-void TDLibWrapper::startUpdates() {
-    if(!this->tdLibReceiver->isRunning()) {
-        qDebug() << "startUpdates really called";
-        this->tdLibReceiver->setActive(true);
-        this->tdLibReceiver->start();
-    }
+void TDLibWrapper::handleForeground() {
+    this->tdLibReceiver->setPowerSavingMode(false);
 }
 
 QVariantMap& TDLibWrapper::fillTdlibParameters(QVariantMap& parameters)
