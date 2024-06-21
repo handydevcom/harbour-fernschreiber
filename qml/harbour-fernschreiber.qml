@@ -36,8 +36,6 @@ ApplicationWindow
         } else {
             tdLibWrapper.handleBackground()
         }
-
-        console.log("application applicationActive! ", applicationActive)
     }
 
     Connections {
