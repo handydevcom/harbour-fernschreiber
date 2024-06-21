@@ -20,7 +20,6 @@
 
 #define DEBUG_MODULE TDLibReceiver
 #include "debuglog.h"
-
 namespace {
     const QString ID("id");
     const QString LIST("list");
