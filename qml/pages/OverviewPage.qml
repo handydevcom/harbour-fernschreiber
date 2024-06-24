@@ -36,6 +36,8 @@ Page {
     property int ownUserId;
     property bool chatListCreated: false;
 
+    property int filterType: 0;
+
     // link handler:
     property string urlToOpen;
     property var chatToOpen: null; //null or [chatId, messageId]
@@ -108,6 +110,13 @@ Page {
         sourceModel: (chatSearchField.opacity > 0) ? chatListModel : null
         filterRoleName: "filter"
         filterText: chatSearchField.text
+    }
+
+    BoolFilterModel {
+        id: filteredByTypeChatListProxyModel
+        sourceModel: filterType != 0 ? chatListModel : null
+        filterRoleName: "is_channel"
+        filterValue: filterType == 2
     }
 
     function openChat(chatId) {
@@ -238,6 +247,33 @@ Page {
         overviewPage.focus = true;
     }
 
+    function toggleFilter() {
+        filterType = (filterType + 1) % 3;
+    }
+
+    function getFilterName() {
+        switch(filterType) {
+            case 0:
+                return qsTr("Everything")
+
+            case 1:
+                return qsTr("Chats only");
+
+            case 2:
+                return qsTr("Channels only");
+        }
+    }
+
+    function getSourceModel() {
+        if(chatListProxyModel.sourceModel) {
+            return chatListProxyModel;
+        }
+        if(filterType == 0) {
+            return chatListModel;
+        }
+        return filteredByTypeChatListProxyModel;
+    }
+
     Connections {
         target: tdLibWrapper
         onAuthorizationStateChanged: {
@@ -326,6 +362,10 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("../pages/AboutPage.qml"))
             }
             MenuItem {
+                text: qsTr("Change content")
+                onClicked: toggleFilter()
+            }
+            MenuItem {
                 text: qsTr("Settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("../pages/SettingsPage.qml"))
             }
@@ -336,12 +376,14 @@ Page {
             MenuItem {
                 text: qsTr("New Chat")
                 onClicked: pageStack.push(Qt.resolvedUrl("../pages/NewChatPage.qml"))
-            }
+            }            
         }
 
         PageHeader {
             id: pageHeader
             title: qsTr("Fernschreiber")
+            description: getFilterName()
+
             leftMargin: Theme.itemSizeMedium
             visible: opacity > 0
             Behavior on opacity { FadeAnimation {} }
@@ -390,15 +432,15 @@ Page {
         SilicaListView {
             id: chatListView
             anchors {
-                top: pageHeader.bottom
-                bottom: parent.bottom
+                top: folderSelectionFlickableView.bottom
+                bottom: parent.bottom//folderSelectionFlickableView.top
                 left: parent.left
                 right: parent.right
             }
             clip: true
             opacity: (overviewPage.chatListCreated && !overviewPage.logoutLoading) ? 1 : 0
             Behavior on opacity { FadeAnimation {} }
-            model: chatListProxyModel.sourceModel ? chatListProxyModel : chatListModel
+            model: getSourceModel()
             delegate: ChatListViewItem {
                 ownUserId: overviewPage.ownUserId
                 isVerified: is_verified
@@ -419,6 +461,45 @@ Page {
             VerticalScrollDecorator {}
         }
 
+        SilicaFlickable {
+            id: folderSelectionFlickableView
+            visible: true
+            opacity: 0.6
+            anchors {
+                top: pageHeader.bottom
+                left: parent.left
+                right: parent.right
+            }
+            height: foldersRow.height
+            contentWidth: foldersRow.width
+            Rectangle {
+                anchors.fill: parent
+                color: Theme.overlayBackgroundColor
+                opacity: Theme.opacityFaint
+            }
+
+            Row {
+                id: foldersRow
+                spacing: Theme.paddingSmall
+                Button {
+                    width: Theme.buttonWidthExtraSmall
+                    text: "All"
+                }
+                Button {
+                    width: Theme.buttonWidthExtraSmall
+                    text: "Chats"
+                }
+                Button {
+                    width: Theme.buttonWidthExtraSmall
+                    text: "Channels"
+                }
+                Button {
+                    width: Theme.buttonWidthExtraSmall
+                    text: "Private"
+                }
+            }
+        }
+
         Column {
             width: parent.width
             spacing: Theme.paddingMedium
@@ -429,8 +510,8 @@ Page {
             visible: !overviewPage.chatListCreated || overviewPage.logoutLoading
 
             BusyLabel {
-                    id: loadingBusyIndicator
-                    running: true
+                id: loadingBusyIndicator
+                running: true
             }
         }
     }
