@@ -1272,6 +1272,18 @@
         <source>Unable to open link.</source>
         <translation>Kan inte öppna länk.</translation>
     </message>
+    <message>
+        <source>Everything</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chats only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channels only</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PinnedMessageItem</name>

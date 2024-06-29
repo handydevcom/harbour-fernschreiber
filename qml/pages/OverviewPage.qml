@@ -93,8 +93,8 @@ Page {
         interval: 600
         onTriggered: {
             chatListModel.calculateUnreadState();
-            tdLibWrapper.getRecentStickers();
-            tdLibWrapper.getInstalledStickerSets();
+            /*tdLibWrapper.getRecentStickers();
+            tdLibWrapper.getInstalledStickerSets();*/
             tdLibWrapper.getContacts();
             tdLibWrapper.getUserPrivacySettingRules(TelegramAPI.SettingAllowChatInvites);
             tdLibWrapper.getUserPrivacySettingRules(TelegramAPI.SettingAllowFindingByPhoneNumber);
@@ -362,10 +362,6 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("../pages/AboutPage.qml"))
             }
             MenuItem {
-                text: qsTr("Change content")
-                onClicked: toggleFilter()
-            }
-            MenuItem {
                 text: qsTr("Settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("../pages/SettingsPage.qml"))
             }
@@ -475,27 +471,54 @@ Page {
             Rectangle {
                 anchors.fill: parent
                 color: Theme.overlayBackgroundColor
-                opacity: Theme.opacityFaint
+                opacity: Theme.opacityHigh
             }
 
             Row {
                 id: foldersRow
                 spacing: Theme.paddingSmall
-                Button {
-                    width: Theme.buttonWidthExtraSmall
+                height: Theme.itemSizeExtraSmall
+                Label {
                     text: "All"
+                    font.pixelSize: Theme.fontSizeSmall
+                    horizontalAlignment: "AlignHCenter"
+                    anchors.verticalCenter: parent.verticalCenter
+                    width: Screen.width / 3
+                    color: filterType == 0 ? Theme.highlightColor : Theme.primaryColor
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                            filterType = 0
+                        }
+                    }
                 }
-                Button {
-                    width: Theme.buttonWidthExtraSmall
+                Label {
                     text: "Chats"
+                    font.pixelSize: Theme.fontSizeSmall
+                    horizontalAlignment: "AlignHCenter"
+                    anchors.verticalCenter: parent.verticalCenter
+                    width: Screen.width / 3
+                    color: filterType == 1 ? Theme.highlightColor : Theme.primaryColor
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                            filterType = 1
+                        }
+                    }
                 }
-                Button {
-                    width: Theme.buttonWidthExtraSmall
+                Label {
                     text: "Channels"
-                }
-                Button {
-                    width: Theme.buttonWidthExtraSmall
-                    text: "Private"
+                    font.pixelSize: Theme.fontSizeSmall
+                    horizontalAlignment: "AlignHCenter"
+                    anchors.verticalCenter: parent.verticalCenter
+                    width: Screen.width / 3
+                    color: filterType == 2 ? Theme.highlightColor : Theme.primaryColor
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                            filterType = 2
+                        }
+                    }
                 }
             }
         }
