@@ -94,8 +94,8 @@ Page {
         repeat: false
         onTriggered: {
             chatListModel.calculateUnreadState();
-            /*tdLibWrapper.getRecentStickers();
-            tdLibWrapper.getInstalledStickerSets();*/
+            tdLibWrapper.getRecentStickers();
+            tdLibWrapper.getInstalledStickerSets();
             tdLibWrapper.getContacts();
             tdLibWrapper.getUserPrivacySettingRules(TelegramAPI.SettingAllowChatInvites);
             tdLibWrapper.getUserPrivacySettingRules(TelegramAPI.SettingAllowFindingByPhoneNumber);
@@ -252,19 +252,6 @@ Page {
         filterType = (filterType + 1) % 3;
     }
 
-    function getFilterName() {
-        switch(filterType) {
-            case 0:
-                return qsTr("Everything")
-
-            case 1:
-                return qsTr("Chats only");
-
-            case 2:
-                return qsTr("Channels only");
-        }
-    }
-
     function getSourceModel() {
         if(chatListProxyModel.sourceModel) {
             return chatListProxyModel;
@@ -378,8 +365,7 @@ Page {
 
         PageHeader {
             id: pageHeader
-            title: qsTr("Fernschreiber")
-            description: getFilterName()
+            title: qsTr("Fernschreiber")           
 
             leftMargin: Theme.itemSizeMedium
             visible: opacity > 0
@@ -480,11 +466,13 @@ Page {
                 spacing: Theme.paddingSmall
                 height: Theme.itemSizeExtraSmall
                 Label {
-                    text: "All"
+                    text: qsTr("All")
                     font.pixelSize: Theme.fontSizeSmall
                     horizontalAlignment: "AlignHCenter"
+                    verticalAlignment: "AlignVCenter"
                     anchors.verticalCenter: parent.verticalCenter
                     width: Screen.width / 3
+                    height: parent.height
                     color: filterType == 0 ? Theme.highlightColor : Theme.primaryColor
                     MouseArea {
                         anchors.fill: parent
@@ -494,7 +482,7 @@ Page {
                     }
                 }
                 Label {
-                    text: "Chats"
+                    text: qsTr("Chats")
                     font.pixelSize: Theme.fontSizeSmall
                     horizontalAlignment: "AlignHCenter"
                     anchors.verticalCenter: parent.verticalCenter
@@ -508,7 +496,7 @@ Page {
                     }
                 }
                 Label {
-                    text: "Channels"
+                    text: qsTr("Channels")
                     font.pixelSize: Theme.fontSizeSmall
                     horizontalAlignment: "AlignHCenter"
                     anchors.verticalCenter: parent.verticalCenter

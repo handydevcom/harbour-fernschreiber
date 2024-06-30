@@ -436,6 +436,8 @@ ChatListModel::ChatListModel(TDLibWrapper *tdLibWrapper, AppSettings *appSetting
     connect(this, SIGNAL(rowsInserted(QModelIndex,int,int)), SIGNAL(countChanged()));
     connect(this, SIGNAL(rowsRemoved(QModelIndex,int,int)), SIGNAL(countChanged()));
     connect(this, SIGNAL(modelReset()), SIGNAL(countChanged()));
+
+
 }
 
 ChatListModel::~ChatListModel()
@@ -561,7 +563,7 @@ QVariantMap ChatListModel::getById(qlonglong chatId)
 
 int ChatListModel::updateChatOrder(int chatIndex)
 {
-    ChatData *chat = chatList.at(chatIndex);
+    /*ChatData *chat = chatList.at(chatIndex);
 
     const int n = chatList.size();
     int newIndex = chatIndex;
@@ -596,7 +598,8 @@ int ChatListModel::updateChatOrder(int chatIndex)
         LOG("Chat" << chat->chatId << "stays at position" << chatIndex);
     }
 
-    return newIndex;
+    return newIndex;*/
+    return chatIndex;
 }
 
 void ChatListModel::enableRefreshTimer()

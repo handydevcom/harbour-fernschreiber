@@ -16,6 +16,7 @@
 */
 
 #include "boolfiltermodel.h"
+#include "chatlistmodel.h"
 
 #define DEBUG_MODULE BoolFilterModel
 #include "debuglog.h"
@@ -40,6 +41,7 @@ void BoolFilterModel::setSourceModel(QAbstractItemModel *model)
         QSortFilterProxyModel::setSourceModel(model);
         updateFilterRole();
         emit sourceChanged();
+        sort(0, Qt::DescendingOrder);
     }
 }
 
@@ -104,6 +106,12 @@ int BoolFilterModel::mapRowFromSource(int i, int fallbackDirection)
     }
 
     return myIndex.row(); // may still be -1
+}
+
+bool BoolFilterModel::lessThan(const QModelIndex &source_left, const QModelIndex &source_right) const {
+    QMap<int, QVariant> l = sourceModel()->itemData(source_left);
+    QMap<int, QVariant> r = sourceModel()->itemData(source_right);
+    return l[ChatListModel::RoleLastMessageDate] < r[ChatListModel::RoleLastMessageDate];
 }
 
 int BoolFilterModel::mapRowToSource(int i)

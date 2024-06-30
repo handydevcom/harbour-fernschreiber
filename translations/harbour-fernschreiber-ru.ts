@@ -1296,16 +1296,16 @@
         <translation>Не удаётся открыть ссылку</translation>
     </message>
     <message>
-        <source>Everything</source>
-        <translation type="unfinished"></translation>
+        <source>All</source>
+        <translation>Всё</translation>
     </message>
     <message>
-        <source>Chats only</source>
-        <translation type="unfinished"></translation>
+        <source>Chats</source>
+        <translation>Чаты</translation>
     </message>
     <message>
-        <source>Channels only</source>
-        <translation type="unfinished"></translation>
+        <source>Channels</source>
+        <translation>Каналы</translation>
     </message>
 </context>
 <context>

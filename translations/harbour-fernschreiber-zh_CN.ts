@@ -1254,15 +1254,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Everything</source>
+        <source>All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Chats only</source>
+        <source>Chats</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Channels only</source>
+        <source>Channels</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
