@@ -43,6 +43,8 @@
 #include "tdlibwrapper.h"
 #include "chatpermissionfiltermodel.h"
 #include "chatlistmodel.h"
+#include "chatlistsortedmodel.h"
+#include "sortedchatlistbooleanfiltermodel.h"
 #include "chatmodel.h"
 #include "namedaction.h"
 #include "notificationmanager.h"
@@ -132,6 +134,8 @@ int main(int argc, char *argv[])
     qmlRegisterType<NamedAction>(uri, 1, 0, "NamedAction");
     qmlRegisterType<TextFilterModel>(uri, 1, 0, "TextFilterModel");
     qmlRegisterType<BoolFilterModel>(uri, 1, 0, "BoolFilterModel");
+    qmlRegisterType<SortedChatListBooleanFilterModel>(uri, 1, 0, "SortedChatListBooleanFilterModel");
+    qmlRegisterType<ChatListSortedModel>(uri, 1, 0, "ChatListSortedModel");
     qmlRegisterType<ChatPermissionFilterModel>(uri, 1, 0, "ChatPermissionFilterModel");
     qmlRegisterSingletonType<DebugLogJS>(uri, 1, 0, "DebugLog", DebugLogJS::createSingleton);
 

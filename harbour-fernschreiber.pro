@@ -23,6 +23,7 @@ DEFINES += QT_STATICPLUGIN
 SOURCES += src/harbour-fernschreiber.cpp \
     src/appsettings.cpp \
     src/boolfiltermodel.cpp \
+    src/chatlistsortedmodel.cpp \
     src/chatpermissionfiltermodel.cpp \
     src/chatlistmodel.cpp \
     src/chatmodel.cpp \
@@ -36,6 +37,7 @@ SOURCES += src/harbour-fernschreiber.cpp \
     src/namedaction.cpp \
     src/notificationmanager.cpp \
     src/processlauncher.cpp \
+    src/sortedchatlistbooleanfiltermodel.cpp \
     src/stickermanager.cpp \
     src/tdlibfile.cpp \
     src/tdlibreceiver.cpp \
@@ -222,6 +224,7 @@ INSTALLS += telegram 86.png 108.png 128.png 172.png 256.png \
 HEADERS += \
     src/appsettings.h \
     src/boolfiltermodel.h \
+    src/chatlistsortedmodel.h \
     src/chatpermissionfiltermodel.h \
     src/chatlistmodel.h \
     src/chatmodel.h \
@@ -237,6 +240,7 @@ HEADERS += \
     src/namedaction.h \
     src/notificationmanager.h \
     src/processlauncher.h \
+    src/sortedchatlistbooleanfiltermodel.h \
     src/stickermanager.h \
     src/tdlibfile.h \
     src/tdlibreceiver.h \

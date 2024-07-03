@@ -113,11 +113,16 @@ Page {
         filterText: chatSearchField.text
     }
 
-    BoolFilterModel {
+    SortedChatListBooleanFilterModel {
         id: filteredByTypeChatListProxyModel
         sourceModel: filterType != 0 ? chatListModel : null
         filterRoleName: "is_channel"
         filterValue: filterType == 2
+    }
+
+    ChatListSortedModel {
+        id: chatListSortedProxyModel
+        sourceModel: filterType == 0 ? chatListModel : null
     }
 
     function openChat(chatId) {
@@ -257,7 +262,7 @@ Page {
             return chatListProxyModel;
         }
         if(filterType == 0) {
-            return chatListModel;
+            return chatListSortedProxyModel;
         }
         return filteredByTypeChatListProxyModel;
     }
